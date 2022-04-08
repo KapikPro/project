@@ -1,8 +1,8 @@
-#include<iostream>
-#include<vector>
-#include<time.h>
-#include<algorithm>
-#include<cstdlib>
+#include <iostream>
+#include <vector>
+#include <time.h>
+#include <algorithm>
+#include <cstdlib>
 #include <ctime>
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,17 +11,16 @@ using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "Russian");
 	srand(time(NULL));
 
 	long long  c = 0;
 	do
 	{
-		cout << "введите количество элементов в массиве:\n";
+		cout << "enter the number of elements in the array:\n";
 		long long n, i = 0;
 		cin >> n;
 		vector<long long> x(n);
-		cout << "если вы хотите заполнить массив сами, введите 0, если хотите заполнить его автоматически введите 1:\n";
+		cout << "if you want to fill the array yourself enter 0, if you want to fill it automatically enter 1:\n";
 		cin >> c;
 		if (c == 1)
 			for (long long i = 0; i < n; i++)
@@ -30,10 +29,10 @@ int main()
 			for (long long i = 0; i < n; i++)
 				cin >> x[i];
 
-		cout << "введите число, которое хотите найти (от 0 до 100000)\n";
+		cout << "enter the number you want to find (between 0 and 100000)\n";
 		long long o;
 		cin >> o;
-		cout << "выберете способ сортировка:\n1)обычный поиск элемента в массиве напрямую\n2)поиск элемента в массиве после сортировки\n3)поиск элемента посредством бинарного поиска\n";
+		cout << "choose sorting method:\n1)regular element search in the array directly\n2)element search in the array after sorting\n3)element search using binary search\n";
 		cin >> c;
 
 		switch (c)
@@ -46,10 +45,10 @@ int main()
 			unsigned long long end_time = clock();
 			unsigned long long search_time = end_time - start_time;
 			if (o == x[i])
-				cout << "искомый элемент найден под номером " << i << " считая с 0\n";
+				cout << "the desired element is found under the number" << i << " СЃС‡РёС‚Р°СЏ СЃ 0\n";
 			else
-				cout << "искомого элемента в массиве нет\n";
-			cout << "затраченное на поиск время равно " << search_time << "мс\n";
+				cout << "The element you are looking for is not in the array\n";
+			cout << "the time spent on searching is" << search_time << "РјСЃ\n";
 			break;
 		}
 		case 2:
@@ -60,11 +59,11 @@ int main()
 				i++;
 			unsigned long long end_time = clock();
 			unsigned long long search_time = end_time - start_time;
-			if (o != x[i])
-				cout << "искомый элементнайден под номером " << i << " считая с 0\n";
+			if (o == x[i])
+				cout << "the element you are looking for is found\n";
 			else
-				cout << "искомого элемента в массиве нет\n";
-			cout << "затраченное на поиск время равно " << search_time << "мс\n";
+				cout << "The element you are looking for is not in the array\n";
+			cout << "the time spent on searching is" << search_time << "РјСЃ\n";
 			break;
 		}
 		case 3:
@@ -74,15 +73,15 @@ int main()
 			auto it = lower_bound(x.begin(), x.end(), o);
 			unsigned long long end_time = clock();
 			unsigned long long search_time = end_time - start_time;
-			if (*it==o)
-				cout << "искомый элементнайден под номером " << it - x.begin() << " считая с 0\n";
+			if (it != x.end())
+			cout << "the element you are looking for is found\n";
 			else
-				cout << "искомого элемента в массиве нет\n";
-			cout << "затраченное на поиск время равно " << search_time << "мс\n";
+				cout << "The element you are looking for is not in the array\n";
+			cout << "the time spent on searching is" << search_time << "РјСЃ\n";
 			break;
 		}
 		}
-		cout << "если хотите повторить тест введите 1, в ином случае введите 0:\n";
+		cout << "if you want to repeat the test enter 1, otherwise enter 0:\n";
 		cin >> c;
 	} while (c != 0);
 }
