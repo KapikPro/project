@@ -73,7 +73,7 @@ int main()
 			auto it = lower_bound(x.begin(), x.end(), o);
 			unsigned long long end_time = clock();
 			unsigned long long search_time = end_time - start_time;
-			if (*it==o)
+			if (it != x.end())
 			cout << "the element you are looking for is found\n";
 			else
 				cout << "The element you are looking for is not in the array\n";
