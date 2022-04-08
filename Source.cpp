@@ -70,10 +70,12 @@ int main()
 		case 3:
 		{
 			unsigned long long start_time = clock();
+			sort(x.begin(), x.end());
+			auto it = lower_bound(x.begin(), x.end(), o);
 			unsigned long long end_time = clock();
 			unsigned long long search_time = end_time - start_time;
-			if (o != x[i])
-				cout << "искомый элементнайден под номером " << i << " считая с 0\n";
+			if (*it==o)
+				cout << "искомый элементнайден под номером " << it - x.begin() << " считая с 0\n";
 			else
 				cout << "искомого элемента в массиве нет\n";
 			cout << "затраченное на поиск время равно " << search_time << "мс\n";
