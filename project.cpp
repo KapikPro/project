@@ -45,10 +45,10 @@ int main()
 			unsigned long long end_time = clock();
 			unsigned long long search_time = end_time - start_time;
 			if (o == x[i])
-				cout << "the desired element is found under the number" << i << " считая с 0\n";
+				cout << "the desired element is found under the number" << i << " counting from 0\n";
 			else
 				cout << "The element you are looking for is not in the array\n";
-			cout << "the time spent on searching is" << search_time << "мс\n";
+			cout << "the time spent on searching is" << search_time << "ms\n";
 			break;
 		}
 		case 2:
@@ -63,7 +63,7 @@ int main()
 				cout << "the element you are looking for is found\n";
 			else
 				cout << "The element you are looking for is not in the array\n";
-			cout << "the time spent on searching is" << search_time << "мс\n";
+			cout << "the time spent on searching is" << search_time << "ms\n";
 			break;
 		}
 		case 3:
@@ -77,7 +77,7 @@ int main()
 			cout << "the element you are looking for is found\n";
 			else
 				cout << "The element you are looking for is not in the array\n";
-			cout << "the time spent on searching is" << search_time << "мс\n";
+			cout << "the time spent on searching is" << search_time << "ms\n";
 			break;
 		}
 		}
